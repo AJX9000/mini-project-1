@@ -1,0 +1,144 @@
+body {
+	background: black;
+}
+
+/* animation box - parent element; an area for the mouse hover animation */
+.a_box {
+	position: absolute;
+	width: 389px;
+	height: 600px;
+	top: 50%;
+	left: 50%;
+	display: block;
+	box-sizing: border-box;
+	transform: translate(-50%, -50%);
+}
+
+/*.head {
+	position: absolute;
+	width: 327px;
+	height: 389px;
+	top: -101px;
+	left: 31px;
+	!*rotation: -65deg;*!
+	transform: rotate(-65deg);
+	opacity: 0;
+
+	transition: 0.6s;
+}*/
+
+.coverBackground {
+	position: absolute;
+	width: 389px;
+	height: 600px;
+	top: 50%;
+	left: 50%;
+	display: block;
+	box-sizing: border-box;
+	transform: translate(-50%, -50%);
+
+	background: #ee3324;
+}
+
+.author {
+	position: relative;
+	display: block;
+	float: none;
+	font-family: "Lora", "Times New Roman", serif;
+	font-size: 50px;
+	text-align: center;
+
+	top: 30px;
+
+	opacity: 0;
+	animation: title_fade 1s linear;
+	animation-delay: 2.75s;
+	animation-fill-mode: forwards;
+	/*transition: 1s;*/
+}
+
+.title {
+	position: relative;
+	display: block;
+	float: none;
+	font-family: "Oswald", "Arial", sans-serif;
+	font-weight: bold;
+	font-size: 45px;
+	letter-spacing: 2px;
+	text-align: center;
+
+	top: 40px;
+	/*transition-delay: 0.3s;*/
+
+	/*opacity: 0;*/
+/*	animation: title_fade 1s linear;
+	animation-delay: 0.25s;
+	animation-fill-mode: forwards;*/
+	transition: 0.6s;
+}
+
+.leftHead {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	display: block;
+	float: none;
+
+	opacity: 0;
+	animation: left_head 2s ease-out;
+	animation-delay: 0.6s;
+	animation-fill-mode: forwards;
+}
+
+.rightHead {
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+	display: block;
+	float: none;
+
+	opacity: 0;
+	animation: right_head 2s ease-out;
+	animation-delay: 0.6s;
+	animation-fill-mode: forwards;
+}
+
+.grayBar {
+	background-color: gray;
+	width: 389px;
+	height: 10px;
+	top: 0px;
+}
+
+/* ANIMATION */
+
+/*.a_box:hover{
+	transition: 1s ease-in;
+}*/
+
+.a_box:hover .title { /* title falling */
+	/*margin: 0 auto;*/
+	top: 450px;
+	/*left: 31px;*/
+	/*left: 75px;*/
+	/*opacity: 100%;*/
+	/*rotation: 0deg;*/
+	transform: rotate(20deg);
+	transition: 0.6s;
+	/*transition-delay: 0.8s;*/
+}
+
+@keyframes title_fade {
+	0%		{ opacity: 0; }
+	100%	{ opacity: 100%; }
+}
+
+@keyframes left_head {
+	0%		{ opacity: 0; left: 389px; }
+	100%	{ opacity: 100%; left: 0; }
+}
+
+@keyframes right_head {
+	0%		{ opacity: 0; right: 389px; }
+	100%	{ opacity: 100%; right: 0; }
+}
